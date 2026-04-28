@@ -39,26 +39,29 @@ const bootcampForm = document.getElementById("bootcamp-form");
 
 if (bootcampForm) {
   bootcampForm.addEventListener("submit", function (e) {
-    e.preventDefault(); // Stop the default Netlify 404 routing
+    e.preventDefault();
 
-    // Change button text to show it's loading
     const submitBtn = bootcampForm.querySelector('button[type="submit"]');
     const originalBtnText = submitBtn.innerText;
+
+    // Set processing state
     submitBtn.innerText = "Processing...";
     submitBtn.disabled = true;
 
-    // Gather the form data
     const formData = new FormData(bootcampForm);
 
-    // Send the data silently to Netlify
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      // Convert the FormData to the URL-encoded string Netlify expects
       body: new URLSearchParams(formData).toString(),
     })
       .then(() => {
-        // Force the browser to go to the success page
+        // 1. Reset the form inputs and button state BEFORE redirecting
+        bootcampForm.reset();
+        submitBtn.innerText = originalBtnText;
+        submitBtn.disabled = false;
+
+        // 2. Force the browser to go to the success page
         window.location.href =
           "https://frontendlaunchpad.netlify.app/success.html";
       })
@@ -68,5 +71,18 @@ if (bootcampForm) {
         submitBtn.innerText = originalBtnText;
         submitBtn.disabled = false;
       });
+  });
+
+  // Handle the browser's Back-Forward Cache (bfcache)
+  window.addEventListener("pageshow", function (event) {
+    // event.persisted is true if the page is loaded from the browser's cache (e.g., Back button)
+    if (event.persisted) {
+      bootcampForm.reset();
+      const submitBtn = bootcampForm.querySelector('button[type="submit"]');
+      if (submitBtn) {
+        submitBtn.innerText = "Get Payment Details";
+        submitBtn.disabled = false;
+      }
+    }
   });
 }
