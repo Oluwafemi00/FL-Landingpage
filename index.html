@@ -79,15 +79,13 @@
         </p>
 
         <form
-          action="https://formspree.io/f/xpqkvwzo"
+          name="enrollment"
           method="POST"
+          data-netlify="true"
+          action="/success.html"
           class="enroll-form"
         >
-          <input
-            type="hidden"
-            name="_next"
-            value="https://frontendlaunchpad.netlify.app/success.html"
-          />
+          <input type="hidden" name="form-name" value="enrollment" />
 
           <div class="form-row">
             <div class="form-group">
