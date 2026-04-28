@@ -20,7 +20,7 @@
         <p class="hook">
           Go from beginner to building real websites & apps in 6 weeks.
         </p>
-        <a href="#pricing" class="btn primary-btn">Secure Your Slot</a>
+        <a href="#enroll" class="btn primary-btn">Secure Your Slot</a>
       </div>
     </header>
 
@@ -57,11 +57,7 @@
           </div>
           <div class="price">₦10,000</div>
           <p>Lock in the best price before slots fill up.</p>
-          <a
-            href="https://wa.me/2348130732551?text=INTERESTED"
-            class="btn full-width"
-            >Send "INTERESTED"</a
-          >
+          <a href="#enroll" class="btn full-width">Enroll Now</a>
         </div>
         <div class="glass-card price-card">
           <div class="card-header">
@@ -69,12 +65,95 @@
           </div>
           <div class="price">₦15,000</div>
           <p>Standard bootcamp admission.</p>
-          <a
-            href="https://wa.me/2348130732551?text=INTERESTED"
-            class="btn full-width outline-btn"
-            >Send "INTERESTED"</a
-          >
+          <a href="#enroll" class="btn full-width outline-btn">Enroll Now</a>
         </div>
+      </div>
+    </section>
+
+    <section id="enroll" class="enrollment container fade-in">
+      <div class="glass-card form-wrapper">
+        <h2 class="text-center">Reserve Your Seat</h2>
+        <p class="text-center hook" style="margin-bottom: 30px">
+          Enter your details below. You will be redirected to our payment
+          instructions to complete your registration via bank transfer.
+        </p>
+
+        <form
+          action="https://formspree.io/f/xwvnbydy"
+          method="POST"
+          class="enroll-form"
+        >
+          <input
+            type="hidden"
+            name="_next"
+            value="https://landing-page/success.html"
+          />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="e.g. Sodiq Oladele"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="hello@example.com"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="whatsapp">WhatsApp Number</label>
+            <input
+              type="tel"
+              id="whatsapp"
+              name="whatsapp"
+              required
+              placeholder="+234 813 073 2551"
+            />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="experience">Current Experience Level</label>
+              <select id="experience" name="experience" required>
+                <option value="" disabled selected>Select your level...</option>
+                <option value="Total Beginner">
+                  Total Beginner (No coding experience)
+                </option>
+                <option value="Basic HTML/CSS">Know some HTML/CSS</option>
+                <option value="JavaScript Basics">Know basic JavaScript</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="plan">Select Plan</label>
+              <select id="plan" name="plan" required>
+                <option value="" disabled selected>Select your tier...</option>
+                <option value="Early Bird">Early Bird (₦10,000)</option>
+                <option value="Regular">Regular (₦15,000)</option>
+              </select>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="btn primary-btn full-width"
+            style="margin-top: 10px"
+          >
+            Get Payment Details
+          </button>
+        </form>
       </div>
     </section>
 

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complete Your Registration | Frontend Launchpad</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Small custom tweak just for the success page */
+      .success-wrapper {
+        max-width: 600px;
+        margin: 80px auto;
+        text-align: center;
+      }
+      .bank-details {
+        background: rgba(15, 23, 42, 0.6);
+        border: 1px solid rgba(56, 189, 248, 0.3);
+        border-radius: 8px;
+        padding: 30px;
+        margin: 30px 0;
+        text-align: left;
+      }
+      .bank-details p {
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+      }
+      .bank-details span {
+        color: var(--gradient-start);
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background-glow"></div>
+
+    <div class="container success-wrapper fade-in">
+      <div class="glass-card">
+        <h1 style="font-size: 2.5rem; margin-bottom: 10px">
+          Registration Received! 🚀
+        </h1>
+        <p class="hook" style="font-size: 1.1rem; margin-bottom: 0">
+          You're almost there. To secure your slot, please make a transfer to
+          the account below.
+        </p>
+
+        <div class="bank-details">
+          <p>Bank Name: <span>Polaris Bank</span></p>
+          <p>Account Number: <span>3049198997</span></p>
+          <p>Account Name: <span>Sodiq Femi Oladele</span></p>
+          <p
+            style="
+              margin-top: 20px;
+              font-size: 0.95rem;
+              color: var(--text-secondary);
+            "
+          >
+            <em>Amount to pay: ₦10,000 (Early Bird) or ₦15,000 (Regular)</em>
+          </p>
+        </div>
+
+        <p style="margin-bottom: 20px">
+          Done making the transfer? Click the button below to send your payment
+          receipt to us on WhatsApp for instant confirmation.
+        </p>
+
+        <a
+          href="https://wa.me/2348130732551?text=Hello!%20I%20have%20just%20made%20my%20payment%20for%20the%20Frontend%20Launchpad%20Bootcamp.%20Here%20is%20my%20receipt:"
+          class="btn primary-btn full-width"
+        >
+          Send Receipt via WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <script>
+      // Simple fade-in effect script for this page
+      document.addEventListener("DOMContentLoaded", () => {
+        const elements = document.querySelectorAll(".fade-in");
+        elements.forEach((el) => el.classList.add("visible"));
+      });
+    </script>
+  </body>
+</html>
