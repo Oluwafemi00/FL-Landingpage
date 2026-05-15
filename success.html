@@ -3,84 +3,362 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Complete Your Registration | Frontend Launchpad</title>
+    <title>Complete Registration | Frontend Launchpad</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
     <style>
-      /* Small custom tweak just for the success page */
-      .success-wrapper {
-        max-width: 600px;
-        margin: 80px auto;
-        text-align: center;
+      /* Success page overrides */
+      .success-page {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+        position: relative;
+        z-index: 2;
       }
-      .bank-details {
-        background: rgba(15, 23, 42, 0.6);
-        border: 1px solid rgba(56, 189, 248, 0.3);
-        border-radius: 8px;
-        padding: 30px;
-        margin: 30px 0;
+      .success-card {
+        background: var(--surface);
+        border: 1px solid var(--border2);
+        border-radius: 20px;
+        padding: 52px 48px;
+        max-width: 600px;
+        width: 100%;
+        text-align: center;
+        animation: fadeUp 0.6s ease 0.1s both;
+      }
+      @media (max-width: 540px) {
+        .success-card {
+          padding: 32px 24px;
+        }
+      }
+
+      .success-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 16px;
+        background: rgba(0, 232, 122, 0.1);
+        border: 1px solid rgba(0, 232, 122, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 24px;
+        font-size: 28px;
+      }
+      .success-title {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: clamp(40px, 7vw, 64px);
+        letter-spacing: 2px;
+        color: var(--text);
+        line-height: 1;
+        margin-bottom: 12px;
+      }
+      .success-sub {
+        font-size: 15px;
+        color: var(--text2);
+        line-height: 1.7;
+        max-width: 440px;
+        margin: 0 auto 36px;
+      }
+
+      /* BANK DETAILS */
+      .bank-box {
+        background: var(--surface2);
+        border: 1px solid rgba(0, 232, 122, 0.2);
+        border-radius: var(--radius);
+        padding: 28px 32px;
+        margin-bottom: 32px;
         text-align: left;
       }
-      .bank-details p {
-        margin-bottom: 10px;
-        font-size: 1.1rem;
+      .bank-box-title {
+        font-size: 9px;
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--green);
+        margin-bottom: 20px;
       }
-      .bank-details span {
-        color: var(--gradient-start);
+      .bank-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .bank-row:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      .bank-row:first-of-type {
+        padding-top: 0;
+      }
+      .bank-key {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--text3);
+      }
+      .bank-val {
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--text);
+        text-align: right;
+      }
+      .bank-val.highlight {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 20px;
+        letter-spacing: 1px;
+        color: var(--green);
+      }
+      .copy-btn {
+        background: none;
+        border: 1px solid var(--border2);
+        border-radius: 5px;
+        padding: 3px 8px;
+        font-size: 10px;
+        color: var(--text3);
+        cursor: pointer;
+        margin-left: 10px;
+        font-family: "Outfit", sans-serif;
+        transition: all 0.15s;
+      }
+      .copy-btn:hover {
+        border-color: var(--green);
+        color: var(--green);
+      }
+      .copy-btn.copied {
+        border-color: var(--green);
+        color: var(--green);
+        background: rgba(0, 232, 122, 0.05);
+      }
+
+      /* AMOUNT NOTE */
+      .amount-note {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(245, 166, 35, 0.05);
+        border: 1px solid rgba(245, 166, 35, 0.15);
+        border-radius: var(--radius-sm);
+        padding: 12px 16px;
+        margin-top: 20px;
+        text-align: left;
+      }
+      .amount-note-icon {
+        font-size: 14px;
+        flex-shrink: 0;
+      }
+      .amount-note p {
+        font-size: 12px;
+        color: var(--text2);
+        line-height: 1.5;
+      }
+      .amount-note strong {
+        color: var(--amber);
+        font-weight: 500;
+      }
+
+      /* WHATSAPP BTN */
+      .btn-whatsapp {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background: #25d366;
+        color: #fff;
+        width: 100%;
+        padding: 16px;
+        border-radius: var(--radius-sm);
+        font-family: "Outfit", sans-serif;
+        font-size: 15px;
         font-weight: 600;
+        text-decoration: none;
+        transition:
+          opacity 0.18s,
+          transform 0.12s;
+        margin-bottom: 16px;
+      }
+      .btn-whatsapp:hover {
+        opacity: 0.9;
+        transform: translateY(-1px);
+      }
+      .btn-whatsapp svg {
+        width: 20px;
+        height: 20px;
+        fill: currentColor;
+        flex-shrink: 0;
+      }
+
+      .back-link {
+        font-size: 13px;
+        color: var(--text3);
+        text-decoration: none;
+        transition: color 0.15s;
+      }
+      .back-link:hover {
+        color: var(--text2);
+      }
+
+      /* STEPS */
+      .steps {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 32px;
+        text-align: left;
+      }
+      .step {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 14px 16px;
+        background: var(--surface2);
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--border);
+      }
+      .step-num {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 18px;
+        color: var(--green);
+        flex-shrink: 0;
+        line-height: 1;
+        margin-top: 1px;
+      }
+      .step-text {
+        font-size: 13px;
+        color: var(--text2);
+        line-height: 1.5;
+      }
+      .step-text strong {
+        color: var(--text);
+        font-weight: 500;
       }
     </style>
   </head>
   <body>
-    <div class="background-glow"></div>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="grid-bg" aria-hidden="true"></div>
+    <div class="orb orb-1" aria-hidden="true"></div>
+    <div class="orb orb-2" aria-hidden="true"></div>
 
-    <div class="container success-wrapper fade-in">
-      <div class="glass-card">
-        <h1 style="font-size: 2.5rem; margin-bottom: 10px">
-          Registration Received! 🚀
-        </h1>
-        <p class="hook" style="font-size: 1.1rem; margin-bottom: 0">
-          You're almost there. To secure your slot, please make a transfer to
-          the account below.
+    <!-- NAV -->
+    <nav class="nav">
+      <div class="nav-brand"><span class="nav-dot"></span>Asaph</div>
+      <a href="./index.html" class="nav-cta">← Back to site</a>
+    </nav>
+
+    <div class="success-page">
+      <div class="success-card">
+        <div class="success-icon">🚀</div>
+        <h1 class="success-title">You're In!</h1>
+        <p class="success-sub">
+          Your registration has been received. Complete your payment below to
+          lock in your seat for the
+          <strong>Frontend Launchpad</strong> bootcamp.
         </p>
 
-        <div class="bank-details">
-          <p>Bank Name: <span>Polaris Bank</span></p>
-          <p>Account Number: <span>3049198997</span></p>
-          <p>Account Name: <span>Sodiq Femi Oladele</span></p>
-          <p
-            style="
-              margin-top: 20px;
-              font-size: 0.95rem;
-              color: var(--text-secondary);
-            "
-          >
-            <em>Amount to pay: ₦10,000 (Early Bird) or ₦15,000 (Regular)</em>
-          </p>
+        <!-- STEPS -->
+        <div class="steps">
+          <div class="step">
+            <span class="step-num">01</span>
+            <p class="step-text">
+              Copy the account details below and make your transfer from any
+              bank app.
+            </p>
+          </div>
+          <div class="step">
+            <span class="step-num">02</span>
+            <p class="step-text">
+              Take a <strong>screenshot</strong> of your transfer receipt.
+            </p>
+          </div>
+          <div class="step">
+            <span class="step-num">03</span>
+            <p class="step-text">
+              Click the WhatsApp button below and send us your receipt for
+              <strong>instant confirmation</strong>.
+            </p>
+          </div>
         </div>
 
-        <p style="margin-bottom: 20px">
-          Done making the transfer? Click the button below to send your payment
-          receipt to us on WhatsApp for instant confirmation.
-        </p>
+        <!-- BANK DETAILS -->
+        <div class="bank-box">
+          <p class="bank-box-title">Bank Transfer Details</p>
 
+          <div class="bank-row">
+            <span class="bank-key">Bank Name</span>
+            <span class="bank-val">Polaris Bank</span>
+          </div>
+          <div class="bank-row">
+            <span class="bank-key">Account Number</span>
+            <div style="display: flex; align-items: center">
+              <span class="bank-val highlight" id="accNum">3049198997</span>
+              <button
+                class="copy-btn"
+                id="copyAccBtn"
+                onclick="copyText('3049198997', 'copyAccBtn')"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
+          <div class="bank-row">
+            <span class="bank-key">Account Name</span>
+            <span class="bank-val">Sodiq Femi Oladele</span>
+          </div>
+
+          <div class="amount-note">
+            <span class="amount-note-icon">💡</span>
+            <p>
+              Transfer <strong>₦10,000</strong> if you enrolled on the Early
+              Bird plan, or <strong>₦15,000</strong> for Regular.
+            </p>
+          </div>
+        </div>
+
+        <!-- WHATSAPP -->
         <a
-          href="https://wa.me/2348130732551?text=Hello!%20I%20have%20just%20made%20my%20payment%20for%20the%20Frontend%20Launchpad%20Bootcamp.%20Here%20is%20my%20receipt:"
-          class="btn primary-btn full-width"
+          href="https://wa.me/2348130732551?text=Hello!%20I%20just%20made%20my%20payment%20for%20the%20Frontend%20Launchpad%20Bootcamp.%20Here%20is%20my%20receipt%3A"
+          class="btn-whatsapp"
+          target="_blank"
+          rel="noopener"
         >
-          Send Receipt via WhatsApp
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+            />
+          </svg>
+          Send Payment Receipt on WhatsApp
         </a>
+
+        <a href="./index.html" class="back-link"
+          >← Return to Frontend Launchpad</a
+        >
       </div>
     </div>
 
     <script>
-      // Simple fade-in effect script for this page
+      function copyText(text, btnId) {
+        navigator.clipboard.writeText(text).then(() => {
+          const btn = document.getElementById(btnId);
+          btn.textContent = "Copied!";
+          btn.classList.add("copied");
+          setTimeout(() => {
+            btn.textContent = "Copy";
+            btn.classList.remove("copied");
+          }, 2200);
+        });
+      }
+
+      // Fade in
       document.addEventListener("DOMContentLoaded", () => {
-        const elements = document.querySelectorAll(".fade-in");
-        elements.forEach((el) => el.classList.add("visible"));
+        document.querySelectorAll(".fade-item, .fade-section").forEach((el) => {
+          el.classList.add("visible");
+        });
       });
     </script>
   </body>

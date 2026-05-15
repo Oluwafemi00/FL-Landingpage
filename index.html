@@ -1,166 +1,289 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Frontend Launchpad | 6-Week Bootcamp</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="background-glow"></div>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Frontend Launchpad | 6-Week Bootcamp by Asaph</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
 
-    <header class="hero">
-      <div class="container">
-        <div class="badge">🚀 6-Week Intensive</div>
-        <h1>Frontend <span class="gradient-text">Launchpad</span></h1>
-        <p class="hook">
-          Go from beginner to building real websites & apps in 6 weeks.
-        </p>
-        <a href="#enroll" class="btn primary-btn">Secure Your Slot</a>
+  <!-- NOISE OVERLAY -->
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- GRID LINES -->
+  <div class="grid-bg" aria-hidden="true"></div>
+
+  <!-- GLOW ORBS -->
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+
+  <!-- ═══════════════════ HERO ═══════════════════ -->
+  <header class="hero">
+    <nav class="nav">
+      <div class="nav-brand">
+        <span class="nav-dot"></span>Asaph
       </div>
-    </header>
+      <a href="#enroll" class="nav-cta">Enroll Now →</a>
+    </nav>
 
-    <section class="details container fade-in">
-      <div class="grid-2">
-        <div class="glass-card">
-          <h3>🛠️ What You’ll Learn</h3>
-          <ul>
-            <li>HTML, CSS, JavaScript Mastery</li>
-            <li>React (Modern Frontend Architecture)</li>
-            <li>Building Real-world Projects</li>
-            <li>Deployment & Hosting</li>
+    <div class="hero-inner container">
+      <div class="hero-tag">
+        <span class="tag-dot"></span>
+        6-Week Intensive · Cohort 01
+      </div>
+
+      <h1 class="hero-title">
+        Frontend<br/>
+        <em>Launchpad</em>
+      </h1>
+
+      <p class="hero-sub">
+        Go from zero to building real websites &amp; apps.<br/>
+        Live classes. Real projects. No fluff.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#enroll" class="btn btn-primary">Secure Your Slot</a>
+        <a href="#curriculum" class="btn btn-ghost">See Curriculum ↓</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hstat">
+          <span class="hstat-num">6</span>
+          <span class="hstat-label">Weeks</span>
+        </div>
+        <div class="hstat-sep"></div>
+        <div class="hstat">
+          <span class="hstat-num">Live</span>
+          <span class="hstat-label">Classes</span>
+        </div>
+        <div class="hstat-sep"></div>
+        <div class="hstat">
+          <span class="hstat-num">₦10k</span>
+          <span class="hstat-label">Early Bird</span>
+        </div>
+        <div class="hstat-sep"></div>
+        <div class="hstat">
+          <span class="hstat-num">∞</span>
+          <span class="hstat-label">Support</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- scroll indicator -->
+    <div class="scroll-hint">
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      <span>Scroll</span>
+    </div>
+  </header>
+
+  <!-- ═══════════════════ CURRICULUM ═══════════════════ -->
+  <section id="curriculum" class="section container fade-section">
+    <div class="section-label">01 / Curriculum</div>
+    <h2 class="section-title">What You'll <em>Learn</em></h2>
+
+    <div class="curriculum-grid">
+      <div class="week-card fade-item" style="--d:0.05s">
+        <div class="week-num">W1–2</div>
+        <div class="week-body">
+          <h3>Foundations</h3>
+          <p>HTML5 semantics, CSS architecture, Flexbox &amp; Grid mastery. Build your first responsive layouts from scratch.</p>
+          <ul class="week-list">
+            <li>HTML &amp; CSS deep dive</li>
+            <li>Responsive design</li>
+            <li>CSS animations</li>
           </ul>
         </div>
-        <div class="glass-card">
-          <h3>💎 What You’ll Get</h3>
-          <ul>
-            <li>Live Classes + Mentorship</li>
-            <li>Weekly Hands-on Projects</li>
-            <li>Session Recordings</li>
-            <li>Private Support Group</li>
+        <div class="week-accent">HTML · CSS</div>
+      </div>
+
+      <div class="week-card fade-item" style="--d:0.15s">
+        <div class="week-num">W3–4</div>
+        <div class="week-body">
+          <h3>JavaScript</h3>
+          <p>Core JS, DOM manipulation, async programming and APIs. Make your pages come alive with real interactivity.</p>
+          <ul class="week-list">
+            <li>ES6+ fundamentals</li>
+            <li>DOM &amp; Events</li>
+            <li>Fetch &amp; APIs</li>
           </ul>
         </div>
+        <div class="week-accent">JavaScript</div>
       </div>
-    </section>
 
-    <section id="pricing" class="pricing container fade-in">
-      <h2 class="text-center">Choose Your Plan</h2>
-      <div class="grid-2">
-        <div class="glass-card price-card featured">
-          <div class="card-header">
-            <h3>Early Bird</h3>
-            <span class="urgency-badge">⚠️ Limited Slots</span>
-          </div>
-          <div class="price">₦10,000</div>
-          <p>Lock in the best price before slots fill up.</p>
-          <a href="#enroll" class="btn full-width">Enroll Now</a>
+      <div class="week-card fade-item" style="--d:0.25s">
+        <div class="week-num">W5–6</div>
+        <div class="week-body">
+          <h3>React &amp; Launch</h3>
+          <p>Modern React, component architecture, state management. Deploy your capstone project live on the internet.</p>
+          <ul class="week-list">
+            <li>React fundamentals</li>
+            <li>Hooks &amp; State</li>
+            <li>Deployment &amp; hosting</li>
+          </ul>
         </div>
-        <div class="glass-card price-card">
-          <div class="card-header">
-            <h3>Regular</h3>
-          </div>
-          <div class="price">₦15,000</div>
-          <p>Standard bootcamp admission.</p>
-          <a href="#enroll" class="btn full-width outline-btn">Enroll Now</a>
+        <div class="week-accent">React</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ WHAT YOU GET ═══════════════════ -->
+  <section class="section container fade-section">
+    <div class="section-label">02 / Benefits</div>
+    <h2 class="section-title">What You <em>Get</em></h2>
+
+    <div class="benefits-grid">
+      <div class="benefit-item fade-item" style="--d:0.05s">
+        <div class="benefit-icon">◎</div>
+        <div>
+          <h4>Live Classes</h4>
+          <p>Real-time sessions with a working Frontend Engineer. Ask questions, get answers instantly.</p>
         </div>
       </div>
-    </section>
-
-    <section id="enroll" class="enrollment container fade-in">
-      <div class="glass-card form-wrapper">
-        <h2 class="text-center">Reserve Your Seat</h2>
-        <p class="text-center hook" style="margin-bottom: 30px">
-          Enter your details below. You will be redirected to our payment
-          instructions to complete your registration via bank transfer.
-        </p>
-
-        <form
-          name="enrollment"
-          method="POST"
-          data-netlify="true"
-          class="enroll-form"
-          id="bootcamp-form"
-          netlify
-        >
-          <input type="hidden" name="form-name" value="enrollment" />
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Full Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                placeholder="e.g. Sodiq Oladele"
-              />
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                placeholder="hello@example.com"
-              />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="whatsapp">WhatsApp Number</label>
-            <input
-              type="tel"
-              id="whatsapp"
-              name="whatsapp"
-              required
-              placeholder="+234 813 073 2551"
-            />
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="experience">Current Experience Level</label>
-              <select id="experience" name="experience" required>
-                <option value="" disabled selected>Select your level...</option>
-                <option value="Total Beginner">
-                  Total Beginner (No coding experience)
-                </option>
-                <option value="Basic HTML/CSS">Know some HTML/CSS</option>
-                <option value="JavaScript Basics">Know basic JavaScript</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="plan">Select Plan</label>
-              <select id="plan" name="plan" required>
-                <option value="" disabled selected>Select your tier...</option>
-                <option value="Early Bird">Early Bird (₦10,000)</option>
-                <option value="Regular">Regular (₦15,000)</option>
-              </select>
-            </div>
-          </div>
-
-          <button
-            type="submit"
-            class="btn primary-btn full-width"
-            style="margin-top: 10px"
-          >
-            Get Payment Details
-          </button>
-        </form>
+      <div class="benefit-item fade-item" style="--d:0.1s">
+        <div class="benefit-icon">⟨/⟩</div>
+        <div>
+          <h4>Weekly Projects</h4>
+          <p>Build something real every week. Portfolio-ready projects that show what you can do.</p>
+        </div>
       </div>
-    </section>
+      <div class="benefit-item fade-item" style="--d:0.15s">
+        <div class="benefit-icon">▶</div>
+        <div>
+          <h4>Session Recordings</h4>
+          <p>Missed a class? Every session is recorded. Rewatch at your own pace, forever.</p>
+        </div>
+      </div>
+      <div class="benefit-item fade-item" style="--d:0.2s">
+        <div class="benefit-icon">⌘</div>
+        <div>
+          <h4>Private Community</h4>
+          <p>A dedicated WhatsApp group with fellow students, mentors, and resources.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer class="text-center fade-in">
-      <p>Led by an experienced Frontend Engineer.</p>
-      <p class="brand-note">Powered by Asaph</p>
-    </footer>
+  <!-- ═══════════════════ PRICING ═══════════════════ -->
+  <section id="pricing" class="section container fade-section">
+    <div class="section-label">03 / Pricing</div>
+    <h2 class="section-title">Choose Your <em>Plan</em></h2>
 
-    <script src="script.js"></script>
-  </body>
+    <div class="pricing-grid">
+
+      <!-- EARLY BIRD -->
+      <div class="price-card featured fade-item" style="--d:0.05s">
+        <div class="price-card-top">
+          <div class="price-badge">LIMITED SLOTS</div>
+          <div class="price-name">Early Bird</div>
+          <div class="price-amount">₦10,000</div>
+          <p class="price-desc">Lock in the lowest price before all slots are filled. Act fast — this tier closes when seats run out.</p>
+        </div>
+        <ul class="price-list">
+          <li>Everything in Regular</li>
+          <li>Priority seat selection</li>
+          <li>Best price guaranteed</li>
+        </ul>
+        <a href="#enroll" class="btn btn-primary" onclick="document.getElementById('plan').value='Early Bird'">
+          Get Early Bird Access
+        </a>
+      </div>
+
+      <!-- REGULAR -->
+      <div class="price-card fade-item" style="--d:0.15s">
+        <div class="price-card-top">
+          <div class="price-name">Regular</div>
+          <div class="price-amount">₦15,000</div>
+          <p class="price-desc">Standard admission with full access to all sessions, recordings and the community.</p>
+        </div>
+        <ul class="price-list">
+          <li>All 6 weeks of live classes</li>
+          <li>Session recordings</li>
+          <li>Community access</li>
+          <li>Certificate of completion</li>
+        </ul>
+        <a href="#enroll" class="btn btn-outline" onclick="document.getElementById('plan').value='Regular'">
+          Enroll at Regular Price
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════ ENROLL FORM ═══════════════════ -->
+  <section id="enroll" class="section container fade-section">
+    <div class="section-label">04 / Enroll</div>
+    <h2 class="section-title">Reserve Your <em>Seat</em></h2>
+    <p class="section-sub">Fill the form below. You'll receive bank transfer details to complete your registration.</p>
+
+    <div class="form-card fade-item" style="--d:0.05s">
+      <form
+        name="enrollment"
+        method="POST"
+        data-netlify="true"
+        id="bootcamp-form"
+        netlify
+      >
+        <input type="hidden" name="form-name" value="enrollment"/>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="e.g. Sodiq Oladele" required/>
+          </div>
+          <div class="field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="hello@example.com" required/>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="whatsapp">WhatsApp Number</label>
+          <input type="tel" id="whatsapp" name="whatsapp" placeholder="+234 813 073 2551" required/>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="experience">Experience Level</label>
+            <select id="experience" name="experience" required>
+              <option value="" disabled selected>Select your level…</option>
+              <option value="Total Beginner">Total Beginner (No coding experience)</option>
+              <option value="Basic HTML/CSS">Know some HTML/CSS</option>
+              <option value="JavaScript Basics">Know basic JavaScript</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="plan">Plan</label>
+            <select id="plan" name="plan" required>
+              <option value="" disabled selected>Select your plan…</option>
+              <option value="Early Bird">Early Bird (₦10,000)</option>
+              <option value="Regular">Regular (₦15,000)</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
+          Get Payment Details →
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="nav-dot"></span>
+        Asaph
+      </div>
+      <p class="footer-copy">Led by an experienced Frontend Engineer. © 2025</p>
+      <p class="footer-tag">Frontend Launchpad · Cohort 01</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
